@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import dmacc.beans.Contact;
-import dmacc.repository.ContactRepository;
+import dmacc.beans.Player;
+import dmacc.repository.SportsRepository;
 
 
 @Controller
@@ -27,7 +27,7 @@ public class WebController {
 	}
 
 	@GetMapping("/inputPlayer")
-	public String addNewContact(Model model) {
+	public String addNewPlayer(Model model) {
 		Player c = new Player();
 		model.addAttribute("newPlayer", c);
 		return "input";

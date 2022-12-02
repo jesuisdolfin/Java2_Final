@@ -2,10 +2,10 @@ package dmacc.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import dmacc.beans.;
+import dmacc.beans.Player;
 
 @Repository
-public interface SportsRepository extends JpaRepository<Contact, Long> {
+public interface SportsRepository extends JpaRepository<Player, Long> {
 
 }
 
