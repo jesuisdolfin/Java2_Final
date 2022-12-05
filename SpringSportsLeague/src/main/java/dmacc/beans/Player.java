@@ -1,14 +1,28 @@
 package dmacc.beans;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+@Entity
+@Table(name="my_players")
 public class Player {
 
 	// Properties
+	@Id
+	@GeneratedValue
 	private long id;
 	
+	@Column(name="player_name")
 	private String playerName;
 	
 	private int playerNumber;
 	
+	@Autowired
 	private Team playerTeam;
 	
 	// Constructors

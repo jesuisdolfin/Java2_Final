@@ -2,6 +2,9 @@ package dmacc.beans;
 
 import java.util.ArrayList;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Team {
 	
 	// Properties
