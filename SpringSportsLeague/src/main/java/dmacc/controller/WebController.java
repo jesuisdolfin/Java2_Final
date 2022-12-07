@@ -31,7 +31,7 @@ public class WebController {
 	public String addNewTeam(Model model) {
 		Team c = new Team();
 		model.addAttribute("newTeam", c);
-		return "results";
+		return "input";
 	}
 
 	@GetMapping("/insertPlayer")
