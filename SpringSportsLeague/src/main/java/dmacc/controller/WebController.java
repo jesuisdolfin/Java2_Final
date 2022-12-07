@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import dmacc.beans.Player;
+import dmacc.beans.Team;
 import dmacc.repository.SportsRepository;
 
 
@@ -17,40 +18,47 @@ public class WebController {
 	SportsRepository repo;
 
 	@GetMapping({ "/", "viewAll" })
-	public String viewAllPlayers(Model model) {
+	public String viewAllTeams(Model model) {
 		if(repo.findAll().isEmpty()) {
-			return addNewPlayer(model);
+			return addNewTeam(model);
 		}
 		
 		model.addAttribute("teams", repo.findAll());
 		return "results";
 	}
-
-	@GetMapping("/inputPlayer")
-	public String addNewPlayer(Model model) {
-		Player c = new Player();
-		model.addAttribute("newPlayer", c);
+	
+	@GetMapping("/inputTeam")
+	public String addNewTeam(Model model) {
+		Team c = new Team();
+		model.addAttribute("newTeam", c);
 		return "input";
 	}
 
-	@GetMapping("/edit/{id}")
-	public String showUpdatePlayer(@PathVariable("id") long id, Model model) {
-		Player c = repo.findById(id).orElse(null);
-		System.out.println("ITEM TO EDIT: " + c.toString());
+	@GetMapping("/insertPlayer")
+	public String addNewPlayer(Model model) {
+		Player c = new Player();
 		model.addAttribute("newPlayer", c);
+		return "inputPlayer";
+	}
+
+	@GetMapping("/edit/{id}")
+	public String showUpdateTeam(@PathVariable("id") long id, Model model) {
+		Team c = repo.findById(id).orElse(null);
+		System.out.println("ITEM TO EDIT: " + c.toString());
+		model.addAttribute("newTeam", c);
 		return "input";
 	}
 
 	@PostMapping("/update/{id}")
-	public String revisePlayer(Player c, Model model) {
+	public String reviseTeam(Team c, Model model) {
 		repo.save(c);
-		return viewAllPlayers(model);
+		return viewAllTeams(model);
 	}
 	
 	@GetMapping("/delete/{id}")
 	public String deleteUser(@PathVariable("id") long id, Model model) {
-		Player c = repo.findById(id).orElse(null);
+		Team c = repo.findById(id).orElse(null);
 	    repo.delete(c);
-	    return viewAllPlayers(model);
+	    return viewAllTeams(model);
 	}
 }
