@@ -3,23 +3,35 @@ package dmacc.beans;
 import java.util.ArrayList;
 
 import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Embeddable
+@Entity
+@Table(name="my_teams")
 public class Team {
 	
-	// Properties
+	@Id
+	@GeneratedValue
+	private long id;
 	private String teamName;
-	
 	private int teamWins;
+	private ArrayList<Player> playerList= new ArrayList<Player>();
 	
-	private ArrayList<Team> teamSchedule;
 
 	// Constructors
-	public Team(String teamName, int teamWins, ArrayList<Team> teamSchedule) {
+	
+	public Team(String teamName, int teamWins) {
 		super();
 		this.teamName = teamName;
 		this.teamWins = teamWins;
-		this.teamSchedule = teamSchedule;
+		
+	}
+	public Team(String teamName, int teamWins, ArrayList<Player> playerList) {
+		super();
+		this.teamName = teamName;
+		this.teamWins = teamWins;
 	}
 
 	public Team() {
@@ -27,6 +39,13 @@ public class Team {
 	}
 
 	// Getters and Setters
+	public long getId() {
+		return this.id;
+	}
+
+	public void setId(long Id) {
+		this.id = Id;
+	}
 	public String getTeamName() {
 		return teamName;
 	}
@@ -43,18 +62,14 @@ public class Team {
 		this.teamWins = teamWins;
 	}
 
-	public ArrayList<Team> getTeamSchedule() {
-		return teamSchedule;
-	}
-
-	public void setTeamSchedule(ArrayList<Team> teamSchedule) {
-		this.teamSchedule = teamSchedule;
+	public void insertPlayer(Player p) {
+		this.playerList.add(p);
 	}
 
 	// toString
 	@Override
 	public String toString() {
-		return "Team [teamName=" + teamName + ", teamWins=" + teamWins + ", teamSchedule=" + teamSchedule + "]";
+		return "Team [teamName=" + teamName + ", teamWins=" + teamWins + ", teamSchedule=" +  "]";
 	}
 	
 }
