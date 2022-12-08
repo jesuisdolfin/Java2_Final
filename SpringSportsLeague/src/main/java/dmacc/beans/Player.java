@@ -10,13 +10,17 @@ import javax.persistence.Table;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Embeddable
+@Entity
+@Table(name="my_players")
 public class Player {
 
 	// Properties
+	@Id
+	@GeneratedValue
 	private long id;
 	private String playerName;
 	private int playerNumber;
-	private Team playerTeam;
+	private String playerTeam;
 	
 	// Constructors
 	public Player(long id, String playerName, int playerNumber) {
@@ -62,11 +66,11 @@ public class Player {
 		this.playerNumber = playerNumber;
 	}
 
-	public Team getPlayerTeam() {
+	public String getPlayerTeam() {
 		return playerTeam;
 	}
 
-	public void setPlayerTeam(Team playerTeam) {
+	public void setPlayerTeam(String playerTeam) {
 		this.playerTeam = playerTeam;
 	}
 

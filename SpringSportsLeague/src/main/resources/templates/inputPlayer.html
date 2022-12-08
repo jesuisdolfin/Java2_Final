@@ -5,7 +5,7 @@
 <title>Insert Player</title>
 </head>
 <body>
-<form th:object="${newPlayer}" th:action="@{/update/{id}(id=${newPlayer.id})}" method=POST>
+<form th:object="${newPlayer}" th:action="@{/updatePlayer/{id}(id=${newPlayer.id})}" method=POST>
 Player Name: <input name="playerName" size="20" th:field="*{playerName}"><br />
 Player Number: <input name="playerNumber" size="20" th:field="*{playerNumber}"><br />
 Player Team: <input name="playerTeam" size="20" th:field="*{playerTeam}"><br />
@@ -13,7 +13,7 @@ Player Team: <input name="playerTeam" size="20" th:field="*{playerTeam}"><br />
 <input name="Submit" type="submit" value="submit" />
 </form>
 
-<a href="../input">Input Team</a>
-<a href="../viewAll">View All Teams</a>
+<a href="../inputPlayer">Input Player</a>
+<a href="../viewAllPlayers">View All Players</a>
 </body>
 </html>

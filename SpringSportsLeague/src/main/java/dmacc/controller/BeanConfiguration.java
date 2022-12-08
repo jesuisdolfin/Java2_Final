@@ -12,10 +12,6 @@ public class BeanConfiguration {
 
 	@Bean
 	public Player player() {
-		
-		
-		
-		
 		Player bean = new Player();
 		bean.setPlayerName("Player Name");
 		bean.setPlayerNumber(15);
@@ -24,13 +20,12 @@ public class BeanConfiguration {
 	}
 	
 	@Bean
-	
 	public Team team() {
 		Player pbean = new Player("bob smith",27);
 		Team bean = new Team();
 		bean.setTeamName("The team");
 		bean.setTeamWins(1000);
-		bean.insertPlayer(pbean);
+		//bean.insertPlayer(pbean);
 		return bean;
 		
 	}

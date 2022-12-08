@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Players</title>
+</head>
+<body>
+	<form>
+		<table>
+			<tr th:each="currentPlayer : ${my_players}">
+				<td th:text="${currentPlayer.id}" />
+				<td th:text="${currentPlayer.playerName}" />
+				<td th:text="${currentPlayer.playerNumber}" />
+
+				<td><a th:href="@{/edit/{id}(id=${currentPlayer.id})}">Edit</a></td>
+				<td><a th:href="@{/delete/{id}(id=${currentPlayer.id})}">Delete</a></td>
+			</tr>
+		</table>
+	</form>
+	<a href="../inputPlayer">Insert Players</a>
+</body>
+</html>
