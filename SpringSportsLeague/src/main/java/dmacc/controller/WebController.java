@@ -17,24 +17,24 @@ public class WebController {
 	@Autowired
 	SportsRepository repo;
 
-	@GetMapping({ "/", "viewAll" })
+	@GetMapping({ "/", "/viewAll" })
 	public String viewAllTeams(Model model) {
 		if(repo.findAll().isEmpty()) {
 			return addNewTeam(model);
 		}
 		
-		model.addAttribute("teams", repo.findAll());
+		model.addAttribute("my_teams", repo.findAll());
 		return "results";
 	}
 	
-	@GetMapping("/inputTeam")
+	@GetMapping("/input")
 	public String addNewTeam(Model model) {
 		Team c = new Team();
-		model.addAttribute("newTeam", c);
+		model.addAttribute("currentTeam", c);
 		return "input";
 	}
 
-	@GetMapping("/insertPlayer")
+	@GetMapping("/inputPlayer")
 	public String addNewPlayer(Model model) {
 		Player c = new Player();
 		model.addAttribute("newPlayer", c);
@@ -45,7 +45,7 @@ public class WebController {
 	public String showUpdateTeam(@PathVariable("id") long id, Model model) {
 		Team c = repo.findById(id).orElse(null);
 		System.out.println("ITEM TO EDIT: " + c.toString());
-		model.addAttribute("newTeam", c);
+		model.addAttribute("currentTeam", c);
 		return "input";
 	}
 

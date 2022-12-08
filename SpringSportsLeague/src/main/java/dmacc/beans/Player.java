@@ -13,15 +13,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class Player {
 
 	// Properties
-	
 	private long id;
-	
-	
 	private String playerName;
-	
 	private int playerNumber;
-	
-	
+	private Team playerTeam;
 	
 	// Constructors
 	public Player(long id, String playerName, int playerNumber) {
@@ -38,9 +33,6 @@ public class Player {
 		this.playerNumber = playerNumber;
 		
 	}
-
-	
-	
 	public Player() {
 		super();
 	}
@@ -70,8 +62,13 @@ public class Player {
 		this.playerNumber = playerNumber;
 	}
 
-	
+	public Team getPlayerTeam() {
+		return playerTeam;
+	}
 
+	public void setPlayerTeam(Team playerTeam) {
+		this.playerTeam = playerTeam;
+	}
 
 	// toString
 	@Override

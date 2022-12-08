@@ -12,16 +12,15 @@ import javax.persistence.Table;
 @Table(name="my_teams")
 public class Team {
 	
+	// Properties
 	@Id
 	@GeneratedValue
 	private long id;
 	private String teamName;
 	private int teamWins;
 	private ArrayList<Player> playerList= new ArrayList<Player>();
-	
 
 	// Constructors
-	
 	public Team(String teamName, int teamWins) {
 		super();
 		this.teamName = teamName;
@@ -33,7 +32,6 @@ public class Team {
 		this.teamName = teamName;
 		this.teamWins = teamWins;
 	}
-
 	public Team() {
 		super();
 	}
@@ -60,6 +58,14 @@ public class Team {
 
 	public void setTeamWins(int teamWins) {
 		this.teamWins = teamWins;
+	}
+	
+	public ArrayList<Player> getPlayerList() {
+		return playerList;
+	}
+	
+	public void setPlayerList(ArrayList<Player> playerList) {
+		this.playerList = playerList;
 	}
 
 	public void insertPlayer(Player p) {

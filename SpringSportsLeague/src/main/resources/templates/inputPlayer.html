@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Insert Player</title>
 </head>
 <body>
 <form th:object="${newPlayer}" th:action="@{/update/{id}(id=${newPlayer.id})}" method=POST>
 Player Name: <input name="playerName" size="20" th:field="*{playerName}"><br />
 Player Number: <input name="playerNumber" size="20" th:field="*{playerNumber}"><br />
-
+Player Team: <input name="playerTeam" size="20" th:field="*{playerTeam}"><br />
 
 <input name="Submit" type="submit" value="submit" />
 </form>
