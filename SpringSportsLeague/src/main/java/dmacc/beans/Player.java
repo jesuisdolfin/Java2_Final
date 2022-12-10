@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 @Embeddable
 @Entity
-@Table(name="my_players")
+@Table(name = "my_players")
 public class Player {
 
 	// Properties
@@ -19,24 +19,25 @@ public class Player {
 	@GeneratedValue
 	private long id;
 	private String playerName;
-	private int playerNumber;
+	private String playerNumber;
 	private String playerTeam;
-	
+
 	// Constructors
-	public Player(long id, String playerName, int playerNumber) {
+	public Player(long id, String playerName, String playerNumber) {
 		super();
 		this.id = id;
 		this.playerName = playerName;
 		this.playerNumber = playerNumber;
-		
+
 	}
 
-	public Player(String playerName, int playerNumber) {
+	public Player(String playerName, String playerNumber) {
 		super();
 		this.playerName = playerName;
 		this.playerNumber = playerNumber;
-		
+
 	}
+
 	public Player() {
 		super();
 	}
@@ -58,11 +59,11 @@ public class Player {
 		this.playerName = playerName;
 	}
 
-	public int getPlayerNumber() {
+	public String getPlayerNumber() {
 		return playerNumber;
 	}
 
-	public void setPlayerNumber(int playerNumber) {
+	public void setPlayerNumber(String playerNumber) {
 		this.playerNumber = playerNumber;
 	}
 
@@ -77,8 +78,7 @@ public class Player {
 	// toString
 	@Override
 	public String toString() {
-		return "Player [id=" + id + ", playerName=" + playerName + ", playerNumber=" + playerNumber + ", playerTeam="
-				 ;
+		return "Player [id=" + id + ", playerName=" + playerName + ", playerNumber=" + playerNumber + ", playerTeam=";
 	}
-	
+
 }

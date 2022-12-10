@@ -3,18 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert Team</title>
-     
+
 </head>
 <body>
-<form th:object="${currentTeam}" th:action="@{/updateTeam/{id}(id=${currentTeam.id})}" method=POST>
-Team Name: <input name="teamName" size="20" th:field="*{teamName}"><br />
-Team Wins: <input name="teamWins" size="20" th:field="*{teamWins}"><br />
+	<form th:object="${currentTeam}"
+		th:action="@{/updateTeam/{id}(id=${currentTeam.id})}"
+		method=POST>
+		Team Name: <input name="teamName" size="20" th:field="*{teamName}"><br />
+		Team Wins: <input name="teamWins" size="20" th:field="*{teamWins}"><br />
 
-<input name="Submit" type="submit" value="submit" />
-</form>
-	
-<p><a href="../inputPlayer">Insert Players</a></p>
-<p><a href="../viewAllTeams">View All Teams</a></p>
+		<input name="Submit" type="submit" value="submit" />
+	</form>
+
+	<p>
+		<a href="../inputPlayer">Insert Players</a>
+	</p>
+	<p>
+		<a href="../viewAllTeams">View All Teams</a>
+	</p>
 
 </body>
 </html>

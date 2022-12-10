@@ -14,14 +14,14 @@ public class BeanConfiguration {
 	public Player player() {
 		Player bean = new Player();
 		bean.setPlayerName("Player Name");
-		bean.setPlayerNumber(15);
+		bean.setPlayerNumber("15");
 		
 		return bean;
 	}
 	
 	@Bean
 	public Team team() {
-		Player pbean = new Player("bob smith",27);
+		Player pbean = new Player("bob smith","27");
 		Team bean = new Team();
 		bean.setTeamName("The team");
 		bean.setTeamWins(1000);

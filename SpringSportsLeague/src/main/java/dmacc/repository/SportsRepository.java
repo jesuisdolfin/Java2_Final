@@ -7,6 +7,8 @@ import dmacc.beans.Team;
 @Repository
 public interface SportsRepository extends JpaRepository<Team, Long> {
 
+	public Team findByTeamName(String teamName);
+
 }
 
 

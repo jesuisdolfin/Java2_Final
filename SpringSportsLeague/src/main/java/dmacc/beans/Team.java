@@ -18,7 +18,6 @@ public class Team {
 	private long id;
 	private String teamName;
 	private int teamWins;
-	//private ArrayList<Player> playerList = new ArrayList<Player>();
 
 	// Constructors
 	public Team(String teamName, int teamWins) {
@@ -62,18 +61,6 @@ public class Team {
 	public void setTeamWins(int teamWins) {
 		this.teamWins = teamWins;
 	}
-
-//	public ArrayList<Player> getPlayerList() {
-//		return playerList;
-//	}
-//
-//	public void setPlayerList(ArrayList<Player> playerList) {
-//		this.playerList = playerList;
-//	}
-//
-//	public void insertPlayer(Player p) {
-//		this.playerList.add(p);
-//	}
 
 	// toString
 	@Override

@@ -14,10 +14,17 @@
 
 				<td><a th:href="@{/edit/{id}(id=${currentTeam.id})}">Edit</a></td>
 				<td><a th:href="@{/delete/{id}(id=${currentTeam.id})}">Delete</a></td>
+				<td><a
+					th:href="@{/viewRoster/{teamName}(teamName=${currentTeam.teamName})}">View
+						Roster</a></td>
 			</tr>
 		</table>
 	</form>
-	<p><a href="../inputPlayer">Insert Players</a></p>
-	<p><a href="../viewAllPlayers">View all Players</a></p>
+	<p>
+		<a href="../inputPlayer">Insert Players</a>
+	</p>
+	<p>
+		<a href="../viewAllPlayers">View all Players</a>
+	</p>
 </body>
 </html>
