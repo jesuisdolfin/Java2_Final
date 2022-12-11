@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+
 import dmacc.beans.Player;
 import dmacc.beans.Roster;
 import dmacc.beans.Team;
@@ -86,6 +87,14 @@ public class WebController {
 		model.addAttribute("my_teams", c);
 		return "updateTeam{id}";
 	}
+	
+	@GetMapping("/editPlayer/{playerNumber}")
+	public String showUpdatePlayer(@PathVariable("playerNumber") String playerNumber, Model model) {
+		Player l = playerRepo.findByPlayerNumber(playerNumber);
+		System.out.println("ITEM TO EDIT: " + l.toString());
+		model.addAttribute("newPlayer", l);
+		return "updatePlayer{id}";
+	}
 
 	@PostMapping("/updateTeam/{id}")
 	public String reviseTeam(Team c, Model model) {
@@ -108,8 +117,8 @@ public class WebController {
 	
 	@GetMapping("/deletePlayer/{id}")
 	public String deletePlayer(@PathVariable("id") long id, Model model) {
-		Team c = repo.findById(id).orElse(null);
-	    repo.delete(c);
-	    return viewAllTeams(model);
+		Player c = playerRepo.findById(id).orElse(null);
+	    playerRepo.delete(c);
+	    return viewAllPlayers(model);
 	}
 }

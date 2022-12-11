@@ -14,8 +14,8 @@
 				<td th:text="${currentPlayer.playerNumber}" />
 				<td th:text="${currentPlayer.playerTeam}" />
 
-				<td><a th:href="@{/edit/{id}(id=${currentPlayer.id})}">Edit</a></td>
-				<td><a th:href="@{/delete/{id}(id=${currentPlayer.id})}">Delete</a></td>
+				<td><a th:href="@{/editPlayer/{id}(id=${currentPlayer.id})}">Edit</a></td>
+				<td><a th:href="@{/deletePlayer/{id}(id=${currentPlayer.id})}">Delete</a></td>
 				<td><a th:href="@{/viewRoster/{teamName}(teamName=${currentPlayer.playerTeam})}">View Roster</a></td>
 			</tr>
 		</table>
