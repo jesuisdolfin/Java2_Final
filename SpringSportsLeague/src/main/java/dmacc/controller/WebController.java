@@ -79,21 +79,21 @@ public class WebController {
 		return "inputPlayer";
 	}
 
-	@GetMapping("/editTeam/{teamName}")
-	public String showUpdateTeam(@PathVariable("teamName") String teamName, Model model) {
-		Team c = repo.findByTeamName(teamName);
+	@GetMapping("/editTeam/{id}")
+	public String showUpdateTeam(@PathVariable("id") long id, Model model) {
+		Team c = repo.findById(id).orElse(null);
 		//Team c = repo.findById(id).orElse(null);
 		System.out.println("ITEM TO EDIT: " + c.toString());
-		model.addAttribute("my_teams", c);
-		return "updateTeam{id}";
+		model.addAttribute("currentTeam", c);
+		return "inputTeam";
 	}
 	
-	@GetMapping("/editPlayer/{playerNumber}")
-	public String showUpdatePlayer(@PathVariable("playerNumber") String playerNumber, Model model) {
-		Player l = playerRepo.findByPlayerNumber(playerNumber);
+	@GetMapping("/editPlayer/{id}")
+	public String showUpdatePlayer(@PathVariable("id") long id, Model model) {
+		Player l = playerRepo.findById(id).orElse(null);
 		System.out.println("ITEM TO EDIT: " + l.toString());
 		model.addAttribute("newPlayer", l);
-		return "updatePlayer{id}";
+		return "inputPlayer";
 	}
 
 	@PostMapping("/updateTeam/{id}")
