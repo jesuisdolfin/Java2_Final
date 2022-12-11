@@ -7,4 +7,10 @@ import dmacc.beans.Player;
 @Repository
 public interface PlayerRepository extends JpaRepository<Player, Long> {
 
+	/**
+	 * @param playerNumber
+	 * @return
+	 */
+	Player findByPlayerNumber(String playerNumber);
+
 }

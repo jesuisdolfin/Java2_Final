@@ -12,8 +12,8 @@
 				<td th:text="${currentTeam.teamName}" />
 				<td th:text="${currentTeam.teamWins}" />
 
-				<td><a th:href="@{/edit/{id}(id=${currentTeam.id})}">Edit</a></td>
-				<td><a th:href="@{/delete/{id}(id=${currentTeam.id})}">Delete</a></td>
+				<td><a th:href="@{/editTeam/{id}(id=${currentTeam.id})}">Edit</a></td>
+				<td><a th:href="@{/deleteTeam/{id}(id=${currentTeam.id})}">Delete</a></td>
 				<td><a
 					th:href="@{/viewRoster/{teamName}(teamName=${currentTeam.teamName})}">View
 						Roster</a></td>
