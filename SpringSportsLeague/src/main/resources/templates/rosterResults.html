@@ -10,12 +10,7 @@
 	</p>
 	<form>
 		<table>
-			<tr>
-				<td><a
-					th:href="@{/editTeam/{teamName}(teamName=${my_roster.teamName})}">Edit</a></td>
-				<td><a
-					th:href="@{/deleteTeam/{teamName}(teamName=${my_roster.teamName})}">Delete</a>
-			</tr>
+			
 			<tr th:each="entry : ${my_roster.alphaMap}">
 				<td><span>#</span>
 				<td th:text="${entry.key}"></td>
