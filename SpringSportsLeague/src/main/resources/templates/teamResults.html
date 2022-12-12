@@ -8,8 +8,8 @@
 	<form>
 		<table>
 			<tr th:each="currentTeam : ${my_teams}">
-				<td th:text="${currentTeam.id}" />
 				<td th:text="${currentTeam.teamName}" />
+				<td><span>|| Wins: </span>
 				<td th:text="${currentTeam.teamWins}" />
 
 				<td><a th:href="@{/editTeam/{id}(id=${currentTeam.id})}">Edit</a></td>
@@ -20,6 +20,9 @@
 			</tr>
 		</table>
 	</form>
+	<p>
+		<a href="../viewStandings">View Standings</a>
+	</p>
 	<p>
 		<a href="../inputPlayer">Insert Players</a>
 	</p>

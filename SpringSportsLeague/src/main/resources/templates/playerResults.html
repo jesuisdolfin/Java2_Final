@@ -6,23 +6,31 @@
 </head>
 <body>
 	<form>
-	<p>Name    --| # |--    Team</p>
+		<p>Name --| # |-- Team</p>
 		<table>
 			<tr th:each="currentPlayer : ${my_players}">
-		
+
 				<td th:text="${currentPlayer.playerName}" />
 				<td th:text="${currentPlayer.playerNumber}" />
 				<td th:text="${currentPlayer.playerTeam}" />
 
 				<td><a th:href="@{/editPlayer/{id}(id=${currentPlayer.id})}">Edit</a></td>
 				<td><a th:href="@{/deletePlayer/{id}(id=${currentPlayer.id})}">Delete</a></td>
-				<td><a th:href="@{/viewRoster/{teamName}(teamName=${currentPlayer.playerTeam})}">View Roster</a></td>
+				<td><a
+					th:href="@{/viewRoster/{teamName}(teamName=${currentPlayer.playerTeam})}">View
+						Roster</a></td>
 			</tr>
 		</table>
 	</form>
-	<p><a href="../inputPlayer">Insert Players</a></p>
-	<p><a href="../inputTeam">Create New Team</a></p>
-	<p><a href="../viewAllTeams">View All Teams</a></p>
-	
+	<p>
+		<a href="../inputPlayer">Insert Players</a>
+	</p>
+	<p>
+		<a href="../inputTeam">Create New Team</a>
+	</p>
+	<p>
+		<a href="../viewAllTeams">View All Teams</a>
+	</p>
+
 </body>
 </html>

@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.ui.ModelMap;
+
 @Entity
 @Table(name = "my_teams")
 public class Team {
